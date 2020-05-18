@@ -7,9 +7,6 @@ var citiesArray = JSON.parse(localStorage.getItem("cities")) || [];
 
 const m = moment();
 
-/////
-// ON LOAD
-/////
 
 $(document).ready(function() {
 	var city = citiesArray[citiesArray.length - 1];
