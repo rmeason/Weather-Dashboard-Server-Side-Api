@@ -6,12 +6,7 @@
 
 
 
-    <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-    crossorigin="anonymous"
-/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -29,11 +24,12 @@
 
 
             <div class="container">
-                <!-- ROW ONE COLUMN ONE-->
+
+                
                 <div class="row r1">
                     <div class="col-md-4 c1">
-                        <!-- Left Side:
-                        Search box and area to append searched terms buttons -->
+
+                        
     
                         <h2>City Search:</h2>
                         <form id="city-form">
@@ -43,47 +39,37 @@
                             </button>
                         </form>
     
-                        <!-- Buttons will get dumped here: -->
+
                         <div id="buttons-view" class="card" style="width: 18rem;">
                             <ul class="list-group list-group-flush"></ul>
                         </div>
                     </div>
-    
-                    <!-- ROW ONE COLUMN TWO -->
+
+
                     <div class="col-md-8 c2">
-                        <!-- COLUMN TWO ROW ONE-->
-    
-                        <!-- removed row -->
+
+
                         <div class="r2a">
-                            <!-- Right Side Top:
-                            Display section for City, current date, weather icon (like cloud or something),
-                            temp, humidity, wind speed, uv index. Based on what the uv index is it displays with
-                            different CSS formatting. 
-                            Border around this box -->
     
                             <h3 class="city"></h3>
-                            <!--City, Date, Icon-->
                             <p class="temp"></p>
-                            <!-- in (Alt+0176) °F -->
                             <p class="humidity"></p>
-                            <!-- in % -->
                             <p class="wind"></p>
-                            <!-- in MPH -->
                             <p class="uvIndex"></p>
     
-                            <!-- displayed inside of a box with CSS styling -->
+
+                            
                         </div>
     
                         <div class="forcast">
                             <h2>5-Day Forcast:</h2>
                         </div>
     
-                        <!-- COLUMN TWO ROW TWO -->
+
+                        
                         <div class="row r2b justify-content-between">
-                            <!-- needs to be a row so that they sit side by side ! -->
-                            <!-- Right side bottom:
-                            Five cards with each future day's information pulling up: 
-                            date/weather icon/temp/ and humidity -->
+
+                            
                             <div class="col-md-2">
                                 <div class="card" style="width: 8rem;">
                                     <div class="card-body">
@@ -150,35 +136,24 @@
 
 
 
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-    <script
-    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"
-></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-		<script
-			src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-			integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-			integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-			crossorigin="anonymous"
-		></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script src="./script.js"></script>
 </body>

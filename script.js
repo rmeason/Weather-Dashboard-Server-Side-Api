@@ -14,18 +14,9 @@ $(document).ready(function() {
 	citySearch(city);
 });
 
-/////
-// FUNCTIONS
-/////
-
-/////
-// * Create multiple functions within your application to
-// handle the different parts of the dashboard:
-// * Current conditions
-/////
 
 function citySearch(city) {
-	// clear out previous city data
+
 	$(".city").empty();
 	$(".temp").empty();
 	$(".humidity").empty();
@@ -35,24 +26,24 @@ function citySearch(city) {
 	var citySearch = queryURL + city + APIKey;
 	console.log(citySearch);
 
-	// ajax for searching for new city to display
+
 	$.ajax({
 		url: citySearch,
 		method: "GET"
 	}).then(function(response) {
-		// * Display the following under current weather conditions:
 
-		//  line one
-		//   * City
+
+
 		var cityInfo = response.name;
 		console.log(cityInfo);
-		//   * Date
+
+		
 		var dateInfo = response.dt;
 		console.log(dateInfo);
 		var currentDate = moment.unix(dateInfo).format("L");
 		console.log("current date" + currentDate);
-		//   * Icon image (visual representation of weather conditions)
-		// Where are we pulling the icons from and how
+
+		
 		var iconDummy = "https://openweathermap.org/img/wn/";
 		var iconPng = "@2x.png";
 		var iconWeather = response.weather[0].icon;
@@ -64,7 +55,7 @@ function citySearch(city) {
 		$(".city").append(currentDate + " ");
 		$(".city").append(iconImg);
 
-		// line two
+
 		//   * Temperature
 		// Hint: To convert from Kelvin to Fahrenheit: F = (K - 273.15) * 1.80 + 32
 		console.log(response.main.temp);
@@ -74,12 +65,12 @@ function citySearch(city) {
 		console.log(F);
 		$(".temp").append("Temperature: " + F + " °F");
 
-		// line three
+
 		//   * Humidity
 		var humidityInfo = response.main.humidity;
 		$(".humidity").append("Humidity: " + humidityInfo + "%");
 
-		// line four
+
 		//   * Wind speed
 		// To convert from meters per second to Miles Per Hour
 		console.log(response.wind.speed);
@@ -98,13 +89,8 @@ function citySearch(city) {
 	});
 }
 
-/////
-// * Create multiple functions within your application to
-// handle the different parts of the dashboard:
-// * UV index
-/////
 
-// // RECIEVES LAT/LON
+
 
 function uvIndex(lon, lat) {
 	// SEARCHES
@@ -120,8 +106,8 @@ function uvIndex(lon, lat) {
 	}).then(function(response) {
 		var uvFinal = response.value;
 
-		// should be able to compare float to the numbers, try it out
-		// then append button with uvFinal printed to it
+
+		
 		$(".uvIndex").append("UV Index: ");
 		var uvBtn = $("<button>").text(uvFinal);
 		$(".uvIndex").append(uvBtn);
@@ -145,30 +131,27 @@ function uvIndex(lon, lat) {
 	});
 }
 
-/////
-// RENDER BUTTONS CREATES NEW BUTTONS EACH TIME A CITY IS
-// SEARCHED FOR, AND ASSIGNS INFORMATION TO THE BUTTONS.
-// HOWEVER, IT PRINTS THEM SIDE BY SIDE CURRENTLY,
-// SHOULD WE USE A LIST CARD GROUP TO CREATE THE TOP
-// TO BOTTOM LOOK?
-/////
+
+
 
 function renderButtons() {
-	// Deleting the buttons prior to adding new movies
+
+	
 	$(".list-group").empty();
 
-	// Looping through the array of cities
+
+	
 	for (var i = 0; i < citiesArray.length; i++) {
-		// Then dynamicaly generating buttons for each
+
 		var a = $("<li>");
-		// Adding a class
+
 		a.addClass("cityName");
 		a.addClass("list-group-item");
-		// Adding a data-attribute
+
 		a.attr("data-name", citiesArray[i]);
-		// Providing the initial button text
+
 		a.text(citiesArray[i]);
-		// Adding the button to the buttons-view div
+
 		$(".list-group").append(a);
 	}
 
@@ -178,21 +161,14 @@ function renderButtons() {
 		var city = $(this).data("name");
 		console.log("prev searched city" + city);
 
-		//give city info to five day forcast cards as well
 		fiveDay(city);
-		//pull up the information display
+
 		citySearch(city);
 	});
 }
 
-/////
-// * Include a 5-Day Forecast below the current weather conditions.
-// Each day for the 5-Day Forecast should display the following:
-//   * Date
-//   * Icon image (visual representation of weather conditions)
-//   * Temperature
-//   * Humidity
-/////
+
+
 
 function fiveDay(city) {
 	var fiveFront = "https://api.openweathermap.org/data/2.5/forecast?q=";
@@ -391,19 +367,20 @@ function humidityAvg(x, y, z) {
 	return avgHum.toFixed(0);
 }
 
-/////
-// EVENTS
-/////
+
+
 
 $("#add-city").on("click", function(event) {
 	event.preventDefault();
 
-	//line that grabs input from the textbox
+
+	
 	var city = $("#city-input")
 		.val()
 		.trim();
 
-	//push new city into the Array
+
+		
 	var containsCity = false;
 
 	if (citiesArray != null) {
@@ -418,17 +395,15 @@ $("#add-city").on("click", function(event) {
 		citiesArray.push(city);
 	}
 
-	// add to local storage
+	// local storage
 	localStorage.setItem("cities", JSON.stringify(citiesArray));
 
-	//give city info to five day forcast cards as well
+	// five day forcast
 	fiveDay(city);
 
 	// search for the city
 	citySearch(city);
 
-	// then setting up a button that is created for each city searched for
-	renderButtons();
 });
 
 renderButtons();
