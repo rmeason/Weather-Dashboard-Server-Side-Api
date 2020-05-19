@@ -5,7 +5,9 @@ I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
     
     <!--I found a couple of examples, and implemented some of their strategies.  
-        Primarily with the html and js. Helped a lot, but still confusing.-->
+        Primarily with the html and js. Helped a lot, but still confusing.
+            Also, I probably have too many scripts...but it works, so I'm not  
+                touching it-->
 
 
 Description of the application:
