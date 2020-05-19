@@ -404,6 +404,9 @@ $("#add-city").on("click", function(event) {
 	// search for the city
 	citySearch(city);
 
+	// apparently need both render buttons inside and outside
+	renderButtons();
+
 });
 
 renderButtons();
